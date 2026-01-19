@@ -216,7 +216,7 @@ This project is part of my portfolio, showcasing the SQL skills essential for da
 
 ### Stay Updated and Join the Community
 
-- **Instagram**: [Follow me for daily tips and updates](https://www.instagram.com/salim_zulfiqar)
-- **LinkedIn**: [Connect with me professionally]([https:(https://www.linkedin.com/in/salim-zulfiqar-947688371?utm_source=share_via&utm_content=profile&utm_medium=member_android))
+- **Instagram**: (https://www.instagram.com/salim_zulfiqar)
+- **LinkedIn**: [Connect with me.](https://www.linkedin.com/in/salim-zulfiqar-947688371/)
 
 Thank you for your support, and I look forward to connecting with you!
