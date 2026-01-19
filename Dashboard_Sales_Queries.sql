@@ -6,6 +6,7 @@ SELECT
     COUNT(*) AS total_transactions,
     AVG(total_sale) AS avg_transaction_value
 FROM transactions;
+
 Revenue by Time Period
 
 SELECT 
@@ -16,7 +17,9 @@ SELECT
 FROM transactions
 GROUP BY YEAR(sale_date), MONTH(sale_date)
 ORDER BY year, month;
+
 2. Product Category Analysis
+    
 Revenue by Category
 
 SELECT 
@@ -29,6 +32,7 @@ FROM transactions
 WHERE total_sale IS NOT NULL
 GROUP BY category
 ORDER BY category_revenue DESC;
+
 Top Selling Products by Category
 
 SELECT 
@@ -40,7 +44,9 @@ FROM transactions
 WHERE quantiy IS NOT NULL
 GROUP BY category, price_per_unit
 ORDER BY category, total_revenue DESC;
+
 3. Customer Analysis
+    
 Customer Segmentation by Spending
 
 SELECT 
@@ -54,6 +60,7 @@ FROM transactions
 WHERE total_sale IS NOT NULL
 GROUP BY customer_id, gender, age
 ORDER BY total_spent DESC;
+
 New vs Returning Customers
 
 WITH customer_orders AS (
@@ -76,7 +83,9 @@ SELECT
     AVG(total_orders) AS avg_orders_per_customer
 FROM customer_orders
 GROUP BY customer_type;
+
 4. Time Analysis
+    
 Daily Sales Pattern
 
 SELECT 
@@ -138,7 +147,9 @@ ORDER BY
         WHEN '60+' THEN 6
         ELSE 7
     END;
+
 6. Product Performance
+    
 Profitability Analysis (using COGS)
 
 SELECT 
@@ -151,7 +162,9 @@ FROM transactions
 WHERE cogs IS NOT NULL AND total_sale IS NOT NULL
 GROUP BY category
 ORDER BY total_profit DESC;
+
 7. Key Performance Indicators (KPIs)
+    
 Dashboard KPIs
 
 WITH metrics AS (
@@ -175,7 +188,9 @@ SELECT
     ROUND(total_revenue / NULLIF(total_transactions, 0), 2) AS revenue_per_transaction,
     last_30_days_revenue
 FROM metrics;
+
 8. Trend Analysis
+    
 Monthly Growth Rate
 
 WITH monthly_revenue AS (
@@ -202,6 +217,7 @@ SELECT
     ROUND(((revenue - prev_month_revenue) * 100.0 / NULLIF(prev_month_revenue, 0)), 2) AS growth_percentage
 FROM monthly_growth
 ORDER BY year, month;
+
 9. Customer Lifetime Value (CLV)
 
 WITH customer_stats AS (
@@ -222,7 +238,9 @@ SELECT
     COUNT(*) AS customers_with_clv
 FROM customer_stats
 WHERE customer_lifetime_days > 0;
+
 10. Inventory/Product Analysis
+    
 Stock Turnover Analysis
 
 SELECT 
@@ -234,4 +252,5 @@ SELECT
 FROM transactions
 WHERE quantiy IS NOT NULL
 GROUP BY category, price_per_unit
+
 ORDER BY category, total_quantity_sold DESC;
